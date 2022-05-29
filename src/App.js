@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import * as marked from 'marked';
 import dompurify from 'dompurify';
 import Editor from './components/Editor';
@@ -20,11 +20,11 @@ const App = () => {
   }, [editorInput]);
 
   return (
-    <div>
+    <Fragment>
       <Editor editorInput={editorInput} setEditorInput={setEditorInput} />
       <Preview previewOutput={previewOutput} />
       <Footer />
-    </div>
+    </Fragment>
   );
 };
 
