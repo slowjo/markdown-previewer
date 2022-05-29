@@ -1,13 +1,168 @@
+:root {
+  --font-headings: 'Roboto Slab', sans-serif;
+  --font-text: 'Roboto', sans-serif;
+  --color-primary: #55efc4;
+  --color-accent: #ff7675;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  font-family: var(--font-text);
+  background: #f4f4f4;
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+}
+
+#preview > * {
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+h1 {
+  font-size: calc(3vw + 2rem);
+  text-align: center;
+  max-width: 2000px !important;
+  background: #999;
+  padding: 3rem;
+  margin-top: 0;
+  color: white;
+  letter-spacing: 1px;
+}
+
+h1::first-letter {
+  color: var(--color-accent);
+}
+
+h2 {
+  padding-left: 3rem !important;
+  position: relative;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2rem;
+  width: 3px;
+  background: var(--color-accent);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+blockquote {
+  padding-left: 3rem !important;
+}
+
+li {
+  margin-left: 2rem;
 }
 
 code {
+  background: #333;
+  color: #f4f4f4;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+pre {
+  white-space: pre-line;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem;
+}
+
+li::marker {
+  color: var(--color-accent);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #555;
+  color: #f4f4f4;
+  margin-top: 5rem;
+}
+
+.input-box {
+  position: fixed;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  display: grid;
+  grid-template-columns: 1fr clamp(350px, 90vw, 700px) 1fr;
+  background: var(--color-primary);
+}
+
+.top-bar {
+  grid-column: 2;
+  display: flex;
+}
+
+.editor-title {
+  flex: 1;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-top {
+  cursor: pointer;
+  border: none;
+  background: var(--color-accent);
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  color: #f4f4f4;
+  border: 1px solid var(--color-accent);
+}
+
+.btn-top:hover {
+  background: #f4f4f4;
+  color: #333;
+}
+
+#editor {
+  grid-column: 2 / 3;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: 75vh;
+  background: #f4f4f4;
+  font-family: inherit;
+  line-height: 1.2;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
 }
